@@ -11,11 +11,14 @@ config_version=5
 [application]
 
 config/name="Pick a Pic"
+run/main_scene="res://Scripts 'n Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://Sprites and Backgrounds/icon.svg"
+config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

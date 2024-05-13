@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://dbgdjb8gciy6q"]
+[gd_scene load_steps=2 format=3 uid="uid://dbgdjb8gciy6q"]
+
+[ext_resource type="Script" path="res://Scripts 'n Scenes/main_menu.gd" id="1_cqn23"]
 
 [node name="MainMenu" type="Node"]
+script = ExtResource("1_cqn23")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
@@ -19,3 +22,6 @@ text = "Play"
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

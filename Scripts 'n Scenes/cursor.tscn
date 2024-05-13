@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxg1rs7x2cc4k"]
+
+[ext_resource type="Script" path="res://Scripts 'n Scenes/cursor.gd" id="1_y6irc"]
+[ext_resource type="Texture2D" uid="uid://chlv4swn26foq" path="res://Assets/Cursor/O2Meter.png" id="2_vi4vw"]
+[ext_resource type="Texture2D" uid="uid://bd6mjmkh0xi1g" path="res://Assets/Cursor/Cursor.png" id="3_sarc6"]
+
+[node name="Cursor" type="Node2D"]
+script = ExtResource("1_y6irc")
+
+[node name="O2Bar" type="TextureProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -80.0
+offset_right = 71.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 600.0
+value = 600.0
+fill_mode = 5
+texture_progress = ExtResource("2_vi4vw")
+radial_initial_angle = 90.0
+radial_fill_degrees = 90.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Crosshairs" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("3_sarc6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -12.0
+offset_top = -82.0
+offset_right = 10.0
+offset_bottom = -59.0
+text = "O2"
