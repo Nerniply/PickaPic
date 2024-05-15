@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqk0bo24rm6k1"]
+
+[ext_resource type="Texture2D" uid="uid://b0ssnhps0je8y" path="res://Assets/Fishies/Yellow Tang-Sheet.png" id="1_k1lx4"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/tang.gd" id="2_towe8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38ugj"]
+atlas = ExtResource("1_k1lx4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so0mm"]
+atlas = ExtResource("1_k1lx4")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt118"]
+atlas = ExtResource("1_k1lx4")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vop5i"]
+atlas = ExtResource("1_k1lx4")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54u54"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38ugj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so0mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tt118")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vop5i")
+}],
+"loop": true,
+"name": &"swim_R",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkuk7"]
+size = Vector2(34, 26)
+
+[node name="Tang" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_54u54")
+animation = &"swim_R"
+script = ExtResource("2_towe8")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vkuk7")

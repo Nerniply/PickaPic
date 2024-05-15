@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://6ssjba8cguu0"]
+
+[ext_resource type="Texture2D" uid="uid://dacw4kb76o3wm" path="res://Assets/Fishies/Blue Tuna-Sheet.png" id="1_suk5s"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/tuna.gd" id="2_y085q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_decue"]
+atlas = ExtResource("1_suk5s")
+region = Rect2(0, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krfdj"]
+atlas = ExtResource("1_suk5s")
+region = Rect2(75, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sig7"]
+atlas = ExtResource("1_suk5s")
+region = Rect2(150, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onm5c"]
+atlas = ExtResource("1_suk5s")
+region = Rect2(225, 0, 75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oj8vb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_decue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krfdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sig7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onm5c")
+}],
+"loop": true,
+"name": &"swim_R",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vuns"]
+size = Vector2(74, 38)
+
+[node name="Tuna" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_oj8vb")
+animation = &"swim_R"
+script = ExtResource("2_y085q")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5vuns")

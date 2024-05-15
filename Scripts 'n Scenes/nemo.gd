@@ -1,14 +1,16 @@
-extends Node2D
+extends AnimatedSprite2D
 
-var submerged = false
+var isSmol
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position = get_global_mouse_position()
+	if get_parent() is SMOL:
+		isSmol = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	position = get_global_mouse_position()
-	if submerged:
-		$O2Bar.value -= 1
-	else: $O2Bar.value += 6
+	play("swim_L")
+
+
+func _on_area_2d_area_entered(area):
+	print("connected")

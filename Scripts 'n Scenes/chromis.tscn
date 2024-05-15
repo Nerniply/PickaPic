@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1x5y0s4q1tn4"]
+
+[ext_resource type="Texture2D" uid="uid://cf18l5hppa3t5" path="res://Assets/Fishies/Chromis-Sheet.png" id="1_0s40r"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/chromis.gd" id="2_1sxv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boxkw"]
+atlas = ExtResource("1_0s40r")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24r24"]
+atlas = ExtResource("1_0s40r")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ihue"]
+atlas = ExtResource("1_0s40r")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mesa4"]
+atlas = ExtResource("1_0s40r")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5teyl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boxkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24r24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ihue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mesa4")
+}],
+"loop": true,
+"name": &"swim_R",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrww1"]
+size = Vector2(44, 20)
+
+[node name="Chromis" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5teyl")
+animation = &"swim_R"
+script = ExtResource("2_1sxv2")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mrww1")

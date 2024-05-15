@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://cdlyn6k8g551r"]
+
+[ext_resource type="Texture2D" uid="uid://db0vjyicnvy8h" path="res://Assets/Fishies/Blue Tang-Sheet.png" id="1_k7rgt"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/dori.gd" id="2_pfvth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaqai"]
+atlas = ExtResource("1_k7rgt")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ah07"]
+atlas = ExtResource("1_k7rgt")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3giun"]
+atlas = ExtResource("1_k7rgt")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j755e"]
+atlas = ExtResource("1_k7rgt")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbeku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaqai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ah07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3giun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j755e")
+}],
+"loop": true,
+"name": &"swim_R",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaat8"]
+size = Vector2(48, 24)
+
+[node name="Dori" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lbeku")
+animation = &"swim_R"
+frame = 3
+frame_progress = 0.361659
+script = ExtResource("2_pfvth")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_kaat8")

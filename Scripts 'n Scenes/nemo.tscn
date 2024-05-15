@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://djlaxr4ctkyab"]
+
+[ext_resource type="Texture2D" uid="uid://cea1y6khr276n" path="res://Assets/Fishies/Clownfish-Sheet.png" id="1_66ilg"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/nemo.gd" id="2_rjd4g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csb8k"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncpi2"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyc2i"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no6f6"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_353xf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csb8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncpi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyc2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no6f6")
+}],
+"loop": true,
+"name": &"swim_L",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs86m"]
+size = Vector2(44, 20)
+
+[node name="Nemo" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_353xf")
+animation = &"swim_L"
+frame_progress = 0.686722
+script = ExtResource("2_rjd4g")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bs86m")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
