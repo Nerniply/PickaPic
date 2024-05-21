@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2bljf204otv3"]
+
+[ext_resource type="Texture2D" uid="uid://gwtyj0aq1fd0" path="res://Assets/Fishies/Background Fish 1-Sheet.png" id="1_j53s8"]
+[ext_resource type="Script" path="res://generic_fish.gd" id="2_ynkta"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvdsc"]
+atlas = ExtResource("1_j53s8")
+region = Rect2(0, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caeth"]
+atlas = ExtResource("1_j53s8")
+region = Rect2(48, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7ls1"]
+atlas = ExtResource("1_j53s8")
+region = Rect2(96, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ohu3"]
+atlas = ExtResource("1_j53s8")
+region = Rect2(144, 16, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84sex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvdsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caeth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7ls1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ohu3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GenericFish" type="AnimatedSprite2D"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_84sex")
+frame_progress = 0.873253
+script = ExtResource("2_ynkta")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -1,87 +1,601 @@
-[gd_scene load_steps=11 format=3 uid="uid://m652t8f10frr"]
+[gd_scene load_steps=58 format=3 uid="uid://m652t8f10frr"]
 
 [ext_resource type="Script" path="res://Scripts 'n Scenes/test_1.gd" id="1_t8jpn"]
-[ext_resource type="Texture2D" uid="uid://cljjknur5pfpk" path="res://Assets/Underwater-Temp-Test.png" id="2_hpuii"]
+[ext_resource type="AudioStream" uid="uid://bp31x0p3uutfd" path="res://Assets/Music and FX/camera-shutter-6305.mp3" id="2_oecql"]
 [ext_resource type="PackedScene" uid="uid://bxg1rs7x2cc4k" path="res://Scripts 'n Scenes/cursor.tscn" id="2_v4fik"]
-[ext_resource type="PackedScene" uid="uid://djlaxr4ctkyab" path="res://Scripts 'n Scenes/nemo.tscn" id="3_oc0q2"]
-[ext_resource type="PackedScene" uid="uid://cdlyn6k8g551r" path="res://Scripts 'n Scenes/dori.tscn" id="4_pybj1"]
-[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolScreen.gd" id="5_gq7sh"]
-[ext_resource type="PackedScene" uid="uid://6ssjba8cguu0" path="res://Scripts 'n Scenes/tuna.tscn" id="5_jljqr"]
-[ext_resource type="PackedScene" uid="uid://dqk0bo24rm6k1" path="res://Scripts 'n Scenes/tang.tscn" id="6_7nikb"]
-[ext_resource type="PackedScene" uid="uid://d1x5y0s4q1tn4" path="res://Scripts 'n Scenes/chromis.tscn" id="7_lg0gm"]
+[ext_resource type="AudioStream" uid="uid://l8l08w284l4d" path="res://Assets/Music and FX/divesound.mp3" id="3_cyhk2"]
+[ext_resource type="AudioStream" uid="uid://jqpiggm7lfra" path="res://Assets/Music and FX/surfacesound.mp3" id="4_6kpuh"]
+[ext_resource type="Texture2D" uid="uid://uaf6ll3goo8v" path="res://Assets/Background/background.png" id="5_7dkex"]
+[ext_resource type="Texture2D" uid="uid://cq5cb3hb1bhjl" path="res://Assets/background.png" id="5_7ojjc"]
+[ext_resource type="Texture2D" uid="uid://dkbme8iwti27s" path="res://Assets/caves.png" id="6_aq2yv"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/BigSpawn7.gd" id="6_mnge5"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/BigSpawn1.gd" id="7_3uf84"]
+[ext_resource type="Texture2D" uid="uid://cmfj268ywad3j" path="res://Assets/Background/caves.png" id="7_407qu"]
+[ext_resource type="Texture2D" uid="uid://crpn62fmcai35" path="res://Assets/Side Walls.png" id="7_jxmlc"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolCam.gd" id="7_oter6"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/BigSpawn5.gd" id="8_hovk4"]
+[ext_resource type="Texture2D" uid="uid://cj1ndoexrfd4r" path="res://Assets/Frontal Foliage.png" id="8_j5dm1"]
+[ext_resource type="Texture2D" uid="uid://deragg3r0211n" path="res://Assets/Above Ground.png" id="9_20t8q"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/BigCam.gd" id="9_frn5d"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/BigSpawn6.gd" id="9_w06hp"]
+[ext_resource type="Texture2D" uid="uid://bvfj5scqruqx0" path="res://Assets/Background/Corals.png" id="10_3f6rx"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolView.gd" id="12_45di5"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/BigSpawn2.gd" id="12_qk1ix"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/BigSpawn3.gd" id="13_btyst"]
+[ext_resource type="Texture2D" uid="uid://b7s00tq1w8n5w" path="res://Assets/Background/Side Walls.png" id="13_jkmqf"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolSpawn1.gd" id="13_ygjj6"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/BigSpawn4.gd" id="14_4h3j0"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolSpawn7.gd" id="14_pa0j2"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolSpawn5.gd" id="15_6o60m"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolSpawn6.gd" id="16_00seq"]
+[ext_resource type="Texture2D" uid="uid://pldx715tej6j" path="res://Assets/Background/Frontal Foliage.png" id="16_hhvc1"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolSpawn2.gd" id="18_7htym"]
+[ext_resource type="Texture2D" uid="uid://dr5k6yaxgkgvq" path="res://Assets/Scuba View.png" id="19_4gxi4"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolSpawn3.gd" id="19_frk5r"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/SmolSpawn4.gd" id="20_reoi2"]
+[ext_resource type="Texture2D" uid="uid://c5p4ocmisxnvq" path="res://Assets/Fishies/Blue Tuna Silhouette.png" id="21_iffjt"]
+[ext_resource type="Texture2D" uid="uid://bgko6iqjauywi" path="res://Assets/Fishies/Chromis Silhouette.png" id="22_8ftlw"]
+[ext_resource type="Texture2D" uid="uid://eorfpgp2wstq" path="res://Assets/Fishies/Clownfish Silhouette.png" id="23_cb4x3"]
+[ext_resource type="Texture2D" uid="uid://rbwx6q674v81" path="res://Assets/Fishies/Yellow Tang Silhouette.png" id="24_qvhw6"]
+[ext_resource type="Texture2D" uid="uid://cs0qgiygy5ua0" path="res://Assets/Fishies/Blue Tang Silhouette.png" id="25_vpyci"]
+[ext_resource type="PackedScene" uid="uid://drbww8sdiulyd" path="res://Scripts 'n Scenes/world_timer.tscn" id="34_sxjjx"]
+[ext_resource type="Script" path="res://Scripts 'n Scenes/world_timer.gd" id="35_aeb8m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_61lu3"]
+[sub_resource type="Animation" id="Animation_0frmk"]
+resource_name = "Dive"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/BlackScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dive:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 2, 4),
+"transitions": PackedFloat32Array(1, 2.82843, 3.24901),
+"update": 0,
+"values": [0.0, 0.0, -80.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Dive:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Surface:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/Surface:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WhiteScreen:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/WhiteScreen:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BlackScreen:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/BlackScreen:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WhiteScreen:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/WhiteScreen:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="Animation" id="Animation_cps1l"]
+resource_name = "Surface"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WhiteScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/WhiteScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Surface:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/Surface:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Surface2:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(2.37841, 2.37841),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Surface2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 3.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BlackScreen:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/BlackScreen:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WhiteScreen:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/WhiteScreen:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BlackScreen:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/BlackScreen:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dqf71"]
+_data = {
+"Dive": SubResource("Animation_0frmk"),
+"Surface": SubResource("Animation_cps1l")
+}
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gw4x1"]
+a = Vector2(-160, 0)
+b = Vector2(160, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gok3f"]
+a = Vector2(0, -88)
+b = Vector2(0, 88)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x6pwf"]
+a = Vector2(-160, 0)
+b = Vector2(160, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_25kdc"]
+a = Vector2(0, -88)
+b = Vector2(0, 88)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkjre"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sb354"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_83yjg"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yjeqb"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_118d2"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6kjl"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpsnl"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7egyb"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xv5ve"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixhnt"]
+radius = 8.0
 
 [node name="Test1" type="Node2D"]
 script = ExtResource("1_t8jpn")
 
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2(85, 39)
-width = 40.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dqf71")
+}
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-texture = ExtResource("2_hpuii")
+[node name="Camera" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_oecql")
 
-[node name="BigScreen" type="Node2D" parent="."]
+[node name="Dive" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cyhk2")
 
-[node name="Nemo" parent="BigScreen" instance=ExtResource("3_oc0q2")]
-position = Vector2(514, 111)
-frame_progress = 0.388995
+[node name="Surface2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6kpuh")
 
-[node name="Nemo2" parent="BigScreen" instance=ExtResource("3_oc0q2")]
-position = Vector2(322, 629)
-frame_progress = 0.242896
-flip_h = true
+[node name="OceanLayer4" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_7dkex")
 
-[node name="Nemo3" parent="BigScreen" instance=ExtResource("3_oc0q2")]
-position = Vector2(762, 431)
-frame_progress = 0.0
-flip_h = true
+[node name="BigSpawn7" type="Node2D" parent="."]
+position = Vector2(64, 0)
+script = ExtResource("6_mnge5")
 
-[node name="Dori" parent="BigScreen" instance=ExtResource("4_pybj1")]
-position = Vector2(256, 199)
+[node name="OceanLayer3" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_407qu")
 
-[node name="Dori2" parent="BigScreen" instance=ExtResource("4_pybj1")]
-position = Vector2(840, 453)
-flip_h = true
+[node name="BigSpawn5" type="Node2D" parent="."]
+position = Vector2(-1216, 448)
+script = ExtResource("8_hovk4")
 
-[node name="Tuna" parent="BigScreen" instance=ExtResource("5_jljqr")]
-position = Vector2(1061, 157)
+[node name="BigSpawn6" type="Node2D" parent="."]
+position = Vector2(1152, 448)
+script = ExtResource("9_w06hp")
 
-[node name="Tuna2" parent="BigScreen" instance=ExtResource("5_jljqr")]
-position = Vector2(944, 650)
-flip_h = true
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_3f6rx")
 
-[node name="Tang" parent="BigScreen" instance=ExtResource("6_7nikb")]
-position = Vector2(1080, 348)
+[node name="BigSpawn1" type="Node2D" parent="."]
+position = Vector2(-1192, -216)
+script = ExtResource("7_3uf84")
 
-[node name="Tang2" parent="BigScreen" instance=ExtResource("6_7nikb")]
-position = Vector2(491, 307)
+[node name="BigSpawn2" type="Node2D" parent="."]
+position = Vector2(-848, 312)
+script = ExtResource("12_qk1ix")
 
-[node name="Tang3" parent="BigScreen" instance=ExtResource("6_7nikb")]
-position = Vector2(852, 126)
-flip_h = true
+[node name="OceanLayer2" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("13_jkmqf")
 
-[node name="Chromis" parent="BigScreen" instance=ExtResource("7_lg0gm")]
-position = Vector2(108, 449)
-flip_h = true
+[node name="BigSpawn3" type="Node2D" parent="."]
+position = Vector2(480, 408)
+script = ExtResource("13_btyst")
 
-[node name="Chromis2" parent="BigScreen" instance=ExtResource("7_lg0gm")]
-position = Vector2(617, 591)
+[node name="BigSpawn4" type="Node2D" parent="."]
+position = Vector2(1096, -288)
+script = ExtResource("14_4h3j0")
 
-[node name="Chromis3" parent="BigScreen" instance=ExtResource("7_lg0gm")]
-position = Vector2(1136, 512)
+[node name="OceanLayer1" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("16_hhvc1")
+
+[node name="Surface" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_20t8q")
 
 [node name="Cursor" parent="." instance=ExtResource("2_v4fik")]
 
-[node name="Label" type="Label" parent="."]
-offset_right = 1152.0
-offset_bottom = 23.0
-text = "Press SPACE to dive/surface"
-horizontal_alignment = 1
+[node name="WhiteScreen" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1584.0
+offset_top = -1096.0
+offset_right = 1584.0
+offset_bottom = 1088.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(330, 190)
+[node name="BlackScreen" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -1584.0
+offset_top = -1096.0
+offset_right = 1584.0
+offset_bottom = 1096.0
+color = Color(0, 0, 0, 1)
+
+[node name="BigCam" type="Camera2D" parent="."]
+limit_left = -1440
+limit_top = -810
+limit_right = 1440
+limit_bottom = 810
+editor_draw_limits = true
+script = ExtResource("9_frn5d")
+
+[node name="Sprite2D" type="Sprite2D" parent="BigCam"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("19_4gxi4")
+
+[node name="Panel" type="Panel" parent="BigCam"]
+custom_minimum_size = Vector2(520, 100)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = -360.0
+offset_right = 24.0
+offset_bottom = -320.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="BigCam/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BigCam/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BigCam/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Objectives: press SPACE to dive and take photos of the fish below"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BigCam/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BigCam/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("21_iffjt")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="BigCam/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("22_8ftlw")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="BigCam/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("23_cb4x3")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="BigCam/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("24_qvhw6")
+stretch_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="BigCam/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("25_vpyci")
+stretch_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 214.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "SCORE:"
+
+[node name="ComboBar" type="ProgressBar" parent="CanvasLayer/PanelContainer2/MarginContainer/VBoxContainer"]
+modulate = Color(1, 0.466667, 0, 1)
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 1
+min_value = 1.0
+max_value = 9.0
+step = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -93,35 +607,207 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-metadata/_edit_use_anchors_ = true
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="PanelContainer/CenterContainer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="SubViewport" type="SubViewport" parent="PanelContainer/CenterContainer/SubViewportContainer"]
+[node name="SmolView" type="SubViewport" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(320, 180)
 render_target_update_mode = 4
+script = ExtResource("12_45di5")
 
-[node name="Sprite2D4" type="Sprite2D" parent="PanelContainer/CenterContainer/SubViewportContainer/SubViewport"]
-texture = ExtResource("2_hpuii")
+[node name="OceanLayer4" type="Sprite2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_7ojjc")
 
-[node name="SmolScreen" type="Node2D" parent="PanelContainer/CenterContainer/SubViewportContainer/SubViewport"]
-script = ExtResource("5_gq7sh")
+[node name="SmolSpawn7" type="Node2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView" groups=["SMOL"]]
+position = Vector2(64, 0)
+script = ExtResource("14_pa0j2")
 
-[node name="Camera2D" type="Camera2D" parent="PanelContainer/CenterContainer/SubViewportContainer/SubViewport"]
+[node name="OceanLayer3" type="Sprite2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_aq2yv")
+
+[node name="SmolSpawn5" type="Node2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView" groups=["SMOL"]]
+position = Vector2(-1218, 448)
+script = ExtResource("15_6o60m")
+
+[node name="SmolSpawn6" type="Node2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView" groups=["SMOL"]]
+position = Vector2(1152, 448)
+script = ExtResource("16_00seq")
+
+[node name="OceanLayer2" type="Sprite2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_jxmlc")
+
+[node name="SmolSpawn1" type="Node2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView" groups=["SMOL"]]
+position = Vector2(-1192, -216)
+script = ExtResource("13_ygjj6")
+
+[node name="SmolSpawn2" type="Node2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView" groups=["SMOL"]]
+position = Vector2(-848, 312)
+script = ExtResource("18_7htym")
+
+[node name="SmolSpawn3" type="Node2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView" groups=["SMOL"]]
+position = Vector2(480, 408)
+script = ExtResource("19_frk5r")
+
+[node name="SmolSpawn4" type="Node2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView" groups=["SMOL"]]
+position = Vector2(1096, -288)
+script = ExtResource("20_reoi2")
+
+[node name="OceanLayer1" type="Sprite2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_j5dm1")
+
+[node name="Surface" type="Sprite2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_20t8q")
+
+[node name="WhiteScreen" type="ColorRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1584.0
+offset_top = -1096.0
+offset_right = 1584.0
+offset_bottom = 1088.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -1584.0
+offset_top = -1096.0
+offset_right = 1584.0
+offset_bottom = 1096.0
+color = Color(0, 0, 0, 1)
+
+[node name="SmolCam" type="Camera2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView"]
 zoom = Vector2(2, 2)
+limit_left = -1440
+limit_top = -810
+limit_right = 1440
+limit_bottom = 810
+script = ExtResource("7_oter6")
 
-[node name="CamGridN" type="Polygon2D" parent="PanelContainer/CenterContainer/SubViewportContainer/SubViewport"]
-position = Vector2(128, -1184)
-polygon = PackedVector2Array(-56, 1192, -56, 1184, -200, 1184, -200, 1192)
+[node name="ThirdsGridN" type="Line2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam"]
+modulate = Color(1, 1, 1, 0.498039)
+points = PackedVector2Array(-160, 0, 160, 0)
+width = 2.0
 
-[node name="Area2D" type="Area2D" parent="PanelContainer/CenterContainer/SubViewportContainer/SubViewport/CamGridN"]
-position = Vector2(85, 39)
+[node name="Area2D" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/ThirdsGridN" groups=["Thirds"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelContainer/CenterContainer/SubViewportContainer/SubViewport/CamGridN/Area2D"]
-shape = SubResource("RectangleShape2D_61lu3")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/ThirdsGridN/Area2D"]
+shape = SubResource("SegmentShape2D_gw4x1")
+
+[node name="ThirdsGridE" type="Line2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam"]
+points = PackedVector2Array(0, -88, 0, 88)
+width = 2.0
+default_color = Color(1, 1, 1, 0.498039)
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/ThirdsGridE" groups=["Thirds"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/ThirdsGridE/Area2D"]
+shape = SubResource("SegmentShape2D_gok3f")
+
+[node name="ThirdsGridS" type="Line2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam"]
+modulate = Color(1, 1, 1, 0.498039)
+points = PackedVector2Array(-160, 0, 160, 0)
+width = 2.0
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/ThirdsGridS" groups=["Thirds"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/ThirdsGridS/Area2D"]
+shape = SubResource("SegmentShape2D_x6pwf")
+
+[node name="ThirdsGridW" type="Line2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam"]
+points = PackedVector2Array(0, -88, 0, 88)
+width = 2.0
+default_color = Color(1, 1, 1, 0.498039)
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/ThirdsGridW" groups=["Thirds"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/ThirdsGridW/Area2D"]
+shape = SubResource("SegmentShape2D_25kdc")
+
+[node name="CenterP" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Center"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/CenterP"]
+shape = SubResource("CircleShape2D_vkjre")
+
+[node name="Center" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Center"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/Center"]
+shape = SubResource("CircleShape2D_sb354")
+
+[node name="NWGoldP" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Golden"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/NWGoldP"]
+shape = SubResource("CircleShape2D_83yjg")
+
+[node name="NWGold" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Golden"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/NWGold"]
+shape = SubResource("CircleShape2D_yjeqb")
+
+[node name="NEGoldP" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Golden"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/NEGoldP"]
+shape = SubResource("CircleShape2D_118d2")
+
+[node name="NEGold" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Golden"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/NEGold"]
+shape = SubResource("CircleShape2D_x6kjl")
+
+[node name="SWGoldP" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Golden"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/SWGoldP"]
+shape = SubResource("CircleShape2D_tpsnl")
+
+[node name="SWGold" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Golden"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/SWGold"]
+shape = SubResource("CircleShape2D_7egyb")
+
+[node name="SEGoldP" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Golden"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/SEGoldP"]
+shape = SubResource("CircleShape2D_xv5ve")
+
+[node name="SEGold" type="Area2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam" groups=["Golden"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView/SmolCam/SEGold"]
+shape = SubResource("CircleShape2D_ixhnt")
+
+[node name="WorldTimer" parent="CanvasLayer" instance=ExtResource("34_sxjjx")]
+script = ExtResource("35_aeb8m")
+
+[connection signal="mouseL" from="." to="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/SubViewportContainer/SmolView" method="_on_test_1_mouse_l"]

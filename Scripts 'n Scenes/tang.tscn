@@ -1,7 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqk0bo24rm6k1"]
+[gd_scene load_steps=12 format=3 uid="uid://dqk0bo24rm6k1"]
 
 [ext_resource type="Texture2D" uid="uid://b0ssnhps0je8y" path="res://Assets/Fishies/Yellow Tang-Sheet.png" id="1_k1lx4"]
 [ext_resource type="Script" path="res://Scripts 'n Scenes/tang.gd" id="2_towe8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeg0j"]
+atlas = ExtResource("1_k1lx4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdtlp"]
+atlas = ExtResource("1_k1lx4")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_38ugj"]
 atlas = ExtResource("1_k1lx4")
@@ -23,6 +31,17 @@ region = Rect2(144, 0, 48, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qeg0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdtlp")
+}],
+"loop": true,
+"name": &"idle_R",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_38ugj")
 }, {
 "duration": 1.0,
@@ -39,16 +58,36 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkuk7"]
-size = Vector2(34, 26)
+[sub_resource type="CircleShape2D" id="CircleShape2D_2cdcl"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oxrx3"]
+radius = 8.0
 
 [node name="Tang" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_54u54")
-animation = &"swim_R"
+animation = &"idle_R"
+frame_progress = 0.251832
 script = ExtResource("2_towe8")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-2, 2)
+[node name="PDetect" type="Area2D" parent="."]
+position = Vector2(-1, 2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_vkuk7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PDetect"]
+shape = SubResource("CircleShape2D_2cdcl")
+
+[node name="Detect" type="Area2D" parent="."]
+position = Vector2(-1, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+shape = SubResource("CircleShape2D_oxrx3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1, 2)
+
+[connection signal="area_entered" from="PDetect" to="." method="_on_p_detect_area_entered"]
+[connection signal="area_exited" from="PDetect" to="." method="_on_p_detect_area_exited"]
+[connection signal="area_entered" from="Detect" to="." method="_on_detect_area_entered"]
+[connection signal="area_exited" from="Detect" to="." method="_on_detect_area_exited"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

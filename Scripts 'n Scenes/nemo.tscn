@@ -1,7 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://djlaxr4ctkyab"]
+[gd_scene load_steps=21 format=3 uid="uid://djlaxr4ctkyab"]
 
 [ext_resource type="Texture2D" uid="uid://cea1y6khr276n" path="res://Assets/Fishies/Clownfish-Sheet.png" id="1_66ilg"]
 [ext_resource type="Script" path="res://Scripts 'n Scenes/nemo.gd" id="2_rjd4g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjl3l"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o08uk"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_csb8k"]
 atlas = ExtResource("1_66ilg")
@@ -19,8 +27,64 @@ region = Rect2(96, 0, 48, 48)
 atlas = ExtResource("1_66ilg")
 region = Rect2(144, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d851j"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3261j"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oafwo"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txikk"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ealpk"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6pi3"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olv1f"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(288, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbkuy"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(336, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pejfi"]
+atlas = ExtResource("1_66ilg")
+region = Rect2(384, 48, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_353xf"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjl3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjl3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjl3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o08uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o08uk")
+}],
+"loop": true,
+"name": &"idle_L",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_csb8k")
@@ -37,21 +101,72 @@ animations = [{
 "loop": true,
 "name": &"swim_L",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d851j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3261j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oafwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txikk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ealpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6pi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olv1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbkuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pejfi")
+}],
+"loop": false,
+"name": &"turn_L",
+"speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs86m"]
-size = Vector2(44, 20)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3nbwh"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wlaw7"]
+radius = 8.0
 
 [node name="Nemo" type="AnimatedSprite2D"]
+show_behind_parent = true
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_353xf")
-animation = &"swim_L"
-frame_progress = 0.686722
+animation = &"idle_L"
+frame_progress = 0.511653
 script = ExtResource("2_rjd4g")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1, -3)
+[node name="PDetect" type="Area2D" parent="."]
+position = Vector2(0, -3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_bs86m")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PDetect"]
+shape = SubResource("CircleShape2D_3nbwh")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="Detect" type="Area2D" parent="."]
+position = Vector2(0, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+shape = SubResource("CircleShape2D_wlaw7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -2.66667)
+
+[connection signal="area_entered" from="PDetect" to="." method="_on_p_detect_area_entered"]
+[connection signal="area_exited" from="PDetect" to="." method="_on_p_detect_area_exited"]
+[connection signal="area_entered" from="Detect" to="." method="_on_detect_area_entered"]
+[connection signal="area_exited" from="Detect" to="." method="_on_detect_area_exited"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

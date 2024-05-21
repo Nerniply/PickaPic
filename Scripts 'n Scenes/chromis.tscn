@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1x5y0s4q1tn4"]
+[gd_scene load_steps=10 format=3 uid="uid://d1x5y0s4q1tn4"]
 
 [ext_resource type="Texture2D" uid="uid://cf18l5hppa3t5" path="res://Assets/Fishies/Chromis-Sheet.png" id="1_0s40r"]
 [ext_resource type="Script" path="res://Scripts 'n Scenes/chromis.gd" id="2_1sxv2"]
@@ -39,16 +39,32 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrww1"]
-size = Vector2(44, 20)
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vth3"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w5qpr"]
+radius = 8.0
 
 [node name="Chromis" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_5teyl")
 animation = &"swim_R"
 script = ExtResource("2_1sxv2")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-2, 1)
+[node name="PDetect" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_mrww1")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PDetect"]
+shape = SubResource("CircleShape2D_2vth3")
+
+[node name="Detect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+shape = SubResource("CircleShape2D_w5qpr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="PDetect" to="." method="_on_p_detect_area_entered"]
+[connection signal="area_exited" from="PDetect" to="." method="_on_p_detect_area_exited"]
+[connection signal="area_entered" from="Detect" to="." method="_on_detect_area_entered"]
+[connection signal="area_exited" from="Detect" to="." method="_on_detect_area_exited"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6lfhj30w4j2b"
+path="res://.godot/imported/Oceanic.wav-73ac1d0494b0483eb8c15542f48ce9f3.sample"
+
+[deps]
+
+source_file="res://Assets/Music and FX/Oceanic.wav"
+dest_files=["res://.godot/imported/Oceanic.wav-73ac1d0494b0483eb8c15542f48ce9f3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

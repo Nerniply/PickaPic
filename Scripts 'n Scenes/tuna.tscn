@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6ssjba8cguu0"]
+[gd_scene load_steps=10 format=3 uid="uid://6ssjba8cguu0"]
 
 [ext_resource type="Texture2D" uid="uid://dacw4kb76o3wm" path="res://Assets/Fishies/Blue Tuna-Sheet.png" id="1_suk5s"]
 [ext_resource type="Script" path="res://Scripts 'n Scenes/tuna.gd" id="2_y085q"]
@@ -21,6 +21,11 @@ region = Rect2(225, 0, 75, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oj8vb"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle_R",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_decue")
@@ -39,16 +44,35 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vuns"]
-size = Vector2(74, 38)
+[sub_resource type="CircleShape2D" id="CircleShape2D_804tc"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sso2v"]
+radius = 8.0
 
 [node name="Tuna" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_oj8vb")
-animation = &"swim_R"
+animation = &"idle_R"
 script = ExtResource("2_y085q")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="PDetect" type="Area2D" parent="."]
 position = Vector2(0, 2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_5vuns")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PDetect"]
+shape = SubResource("CircleShape2D_804tc")
+
+[node name="Detect" type="Area2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+shape = SubResource("CircleShape2D_sso2v")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 2)
+
+[connection signal="area_entered" from="PDetect" to="." method="_on_p_detect_area_entered"]
+[connection signal="area_exited" from="PDetect" to="." method="_on_p_detect_area_exited"]
+[connection signal="area_entered" from="Detect" to="." method="_on_detect_area_entered"]
+[connection signal="area_exited" from="Detect" to="." method="_on_detect_area_exited"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

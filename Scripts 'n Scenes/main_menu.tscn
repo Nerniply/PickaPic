@@ -1,27 +1,82 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbgdjb8gciy6q"]
+[gd_scene load_steps=12 format=3 uid="uid://dbgdjb8gciy6q"]
 
 [ext_resource type="Script" path="res://Scripts 'n Scenes/main_menu.gd" id="1_cqn23"]
+[ext_resource type="Texture2D" uid="uid://c2xagiop2j3wr" path="res://Assets/Title Screen-Sheet.png" id="2_gup2m"]
+[ext_resource type="AudioStream" uid="uid://c6lfhj30w4j2b" path="res://Assets/Music and FX/Oceanic.wav" id="3_8wx70"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pasxb"]
+atlas = ExtResource("2_gup2m")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ish0q"]
+atlas = ExtResource("2_gup2m")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vhry"]
+atlas = ExtResource("2_gup2m")
+region = Rect2(2560, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnnf8"]
+atlas = ExtResource("2_gup2m")
+region = Rect2(3840, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5c5f"]
+atlas = ExtResource("2_gup2m")
+region = Rect2(5120, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y77m"]
+atlas = ExtResource("2_gup2m")
+region = Rect2(6400, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aekhn"]
+atlas = ExtResource("2_gup2m")
+region = Rect2(7680, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1af1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pasxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ish0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vhry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnnf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5c5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y77m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aekhn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_cqn23")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1af1m")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 
-[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play"
+[node name="Play" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -52.0
+offset_top = 222.0
+offset_right = 38.0
+offset_bottom = 270.0
 
-[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8wx70")
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
